@@ -6,9 +6,13 @@ export default class BlackButton extends React.Component{
 
    render(){
         return(
-            <Button style={Styles.blackButton} onPress={this.props.onPress}>
+            <Button style={Styles.blackButton} onPress={this.props.onPress} backButton={this.props.backButton}>
                 {this.props.children}
             </Button>
         )
     }
+}
+
+BlackButton.defaultProps = {
+    backButton: false
 }

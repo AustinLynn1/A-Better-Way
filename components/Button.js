@@ -1,6 +1,8 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Styles from '../constants/styles';
+import Colors from '../constants/Colors';
+import { Ionicons } from '@expo/vector-icons';
 
 export default class Button extends React.Component{
 
@@ -14,3 +16,11 @@ export default class Button extends React.Component{
         )
     }
 }
+
+const styles = StyleSheet.create({
+    icon:{
+        color: Colors.buttonText,
+        
+        
+    }
+})

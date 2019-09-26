@@ -3,24 +3,26 @@ import { SafeAreaView, StatusBar, StyleSheet, Image, View } from 'react-native';
 import Styles from '../constants/styles';
 import Colors from '../constants/Colors';
 
-export default function BasePage(props) {
-      return (
-        <Fragment>
-          <SafeAreaView style={[{flex: 0, backgroundColor: '#000'}, props.headerStyle]}/>
-            <StatusBar barStyle={props.barStyle}/>
-          <SafeAreaView style={[{flex: 1, backgroundColor: Colors.socialMediaGray}, props.footerStyle]}>
-            <Image source={require('../assets/images/logo-Black.png')} style={styles.logo}/>
-            <View style={Styles.appContainer}>
-                  {props.children}
-            </View>
-          </SafeAreaView>
-        </Fragment>
-      )
-    
+export default class BasePage extends React.Component {
+  render(){
+    return (
+      <Fragment>
+        <SafeAreaView style={[{flex: 0, backgroundColor: '#000'}, this.props.headerStyle]}/>
+          <StatusBar barStyle={this.props.barStyle}/>
+        <SafeAreaView style={[{flex: 1, backgroundColor: Colors.grayFooter}, this.props.footerStyle]}>
+          <Image source={require('../assets/images/logo-Black.png')} style={styles.logo}/>
+          <View style={Styles.appContainer}>
+                {this.props.children}
+          </View>
+        </SafeAreaView>
+      </Fragment>
+    )
+  }
 }
 
 BasePage.defaultProps = {
-  barStyle: 'light-content'
+  barStyle: 'light-content',
+  footerStyle: Colors.grayFooter
 }
 
 const styles = StyleSheet.create({
