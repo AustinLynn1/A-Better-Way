@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         height: buttonHeight,
         backgroundColor: colors.blackButton,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
       },
     redButton: {
         height: buttonHeight,
@@ -25,10 +25,23 @@ const styles = StyleSheet.create({
         fontSize: 28,
         fontWeight: 'bold',
         color: colors.buttonText,
+        textAlign: 'center'
       },
     buttonView: {
         width: '100%',
-      }
+      },
+    textInput: {
+      height: 56, 
+      width: 300, 
+      fontSize: 22,
+      backgroundColor: '#ffffff'
+    },
+    textLabel:{
+      textAlign: 'center',
+      fontSize: 28, 
+      fontWeight: 'bold', 
+      color: colors.buttonText
+    }
 
 })
 
