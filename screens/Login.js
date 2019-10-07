@@ -68,7 +68,7 @@ export default class Login extends React.Component{
                     email: user.email, 
                     firstName: user.firstName, 
                     lastName: user.lastName, 
-                    team_id: user.team_id});
+                    teamId: user.teamId});
             } 
         });
     }

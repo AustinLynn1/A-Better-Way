@@ -7,19 +7,19 @@ import GrayFooter from '../components/GrayFooter';
 export default class Home extends React.Component {
   constructor(){
     super();
-    this.state = {
-      id: this.props.navigation.state.params.Id,
-      email: this.props.navigation.state.params.email, 
-      password: this.props.navigation.state.params.password,
-      lastName: this.props.navigation.state.params.lastName,
-      firstName: this.props.navigation.state.params.firstName,
-      phoneNumber: this.props.navigation.state.params.phoneNumber,
-      teamId: this.props.navigation.state.params.teamId,
-    }
+    // this.state = {
+    //   id: this.props.navigation.state.params.id,
+    //   email: this.props.navigation.state.params.email, 
+    //   password: this.props.navigation.state.params.password,
+    //   lastName: this.props.navigation.state.params.lastName,
+    //   firstName: this.props.navigation.state.params.firstName,
+    //   phoneNumber: this.props.navigation.state.params.phoneNumber,
+    //   teamId: this.props.navigation.state.params.teamId,
+    // }
   }
 
   render() {
-    // console.log(this.props.navigation.state.params)
+    console.log(this.props.navigation.state.params.id)
     return (
       <BasePage>
           <BlackButton backButton={true}>ACCOUNT</BlackButton>

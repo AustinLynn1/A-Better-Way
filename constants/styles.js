@@ -21,6 +21,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
       },
+    grayButton: {
+        height: buttonHeight,
+        backgroundColor: colors.grayHeader,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
     buttonText: {
         fontSize: 28,
         fontWeight: 'bold',

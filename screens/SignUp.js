@@ -3,9 +3,11 @@ import BasePage from '../components/BasePage';
 import Input from '../components/Input';
 import Colors from '../constants/Colors';
 import Styles from '../constants/styles';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import BlackHeader from '../components/BlackHeader';
+import { Ionicons } from '@expo/vector-icons';
 
 
 export default class SignUp extends React.Component{
@@ -26,7 +28,7 @@ export default class SignUp extends React.Component{
         this.setEmail = this.setEmail.bind(this);
         this.setPassword = this.setPassword.bind(this);
         this.setFirstName = this.setFirstName.bind(this);
-        this.setLastName - this.setLastName.bind(this);
+        this.setLastName = this.setLastName.bind(this);
         this.setPhoneNumber = this.setPhoneNumber.bind(this);
         this.setTeamId = this.setTeamId.bind(this);
 
@@ -38,20 +40,23 @@ export default class SignUp extends React.Component{
             <BasePage footerStyle={{backgroundColor: Colors.redButton}}>
                 <BlackHeader backButton={true}>SIGN UP</BlackHeader>
                 {this.state.failMessage ? 
-                    <Text style={{color: Colors.buttonText}}>{this.state.failMessage}</Text> 
+                    <View style={{flexDirection: 'row', paddingTop: 10, paddingBottom: 10}}>
+                        <Ionicons name='ios-alert' color='white' size={24}></Ionicons>
+                        <Text style={style.failMessage}>{this.state.failMessage}</Text> 
+                    </View>   
                 : null}
-                <ScrollView>
+                <KeyboardAwareScrollView resetScrollToCoords={{ x: 0, y: 0 }}>
                <Input onChangeText={this.setEmail} value={this.state.email}>EMAIL</Input>
                <Input onChangeText={this.setPassword} value={this.state.password}>PASSWORD</Input>
                <Input onChangeText={this.setFirstName} value={this.state.firstName}>FIRST NAME</Input>
                <Input onChangeText={this.setLastName} value={this.state.lastName}>LAST NAME</Input>
                <Input onChangeText={this.setPhoneNumber} value={this.state.phoneNumber} keyboardType="numeric">PHONE NUMBER</Input>
                <Input onChangeText={this.setTeamId} value={this.state.teamId} keyboardType="numeric">TEAM CODE</Input>
-               <Text style={{color: Colors.buttonText, fontSize: 14, paddingTop: 5}}>This is provided by your coach.</Text>
-               <TouchableOpacity onPress={this.props.signUp} style={{paddingTop: 20}}>
+               <Text style={style.smallText}>This is provided by your coach.</Text>
+               <TouchableOpacity onPress={this.signUp} style={{paddingTop: 20}}>
                    <Text style={Styles.textLabel}>SIGN UP</Text>
                </TouchableOpacity>
-               </ScrollView>
+               </KeyboardAwareScrollView>
             </BasePage>
         )
     }
@@ -84,11 +89,11 @@ export default class SignUp extends React.Component{
         if(!this.state.email || !this.state.password || !this.state.firstName
             || !this.state.lastName || !this.state.phoneNumber || !this.state.teamId){
                 this.setState({failMessage: "Please fill in all fields."});
-            }
+        }
         const headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
-        fetch(process.env.REACT_APP_API_URL + 'signUp', {
+        fetch('http://localhost:3001/signUp', {
             method: 'post',
             body:  JSON.stringify({
                 email: this.state.email, 
@@ -103,6 +108,7 @@ export default class SignUp extends React.Component{
                 this.setState({failMessage: result.data});
             }
             else if(result.success === true){
+                console.log(result.data);
                 const user = result.data.rows[0];
                 this.props.navigation.navigate("Home", 
                     {id: user.id, 
@@ -110,8 +116,21 @@ export default class SignUp extends React.Component{
                     firstName: user.firstName, 
                     lastName: user.lastName, 
                     phoneNumber: user.phoneNumber,
-                    teamId: user.teamId});
+                    teamId: user.team_Id});
             } 
         });
     }
 }
+
+const style = StyleSheet.create({
+    failMessage: {
+        color: Colors.buttonText,
+        fontSize: 22,
+        paddingLeft: 5
+    },
+    smallText:{
+        color: Colors.buttonText, 
+        fontSize: 14, 
+        paddingTop: 5
+    }
+})
