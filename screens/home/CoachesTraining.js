@@ -1,9 +1,10 @@
 import React from 'react';
-import BasePage from '../components/BasePage';
-import BlackButton from '../components/BlackButton';
-import RedButton from '../components/RedButton';
 import { ScrollView } from 'react-native-gesture-handler';
-import Colors from '../constants/Colors';
+
+import BasePage from '../../components/BasePage';
+import BlackButton from '../../components/BlackButton';
+import RedButton from '../../components/RedButton';
+import Colors from '../../constants/Colors';
 
 export default class CoachesTraining extends React.Component{
     render(){

@@ -1,10 +1,11 @@
 import { createAppContainer, createStackNavigator } from 'react-navigation';
 import Home from '../screens/Home';
 import Login from '../screens/Login';
-import Athletes from '../screens/Athletes';
-import CoachesTraining from '../screens/CoachesTraining';
+import Athletes from '../screens/home/Athletes';
+import CoachesTraining from '../screens/home/CoachesTraining';
 import SignUp from '../screens/SignUp';
-import AthleteEvaluation from '../screens/AthleteEvaluation';
+import AthleteEvaluation from '../screens/athlete-evaluation/AthleteEvaluation';
+import PracticePlan from '../screens/home/PracticePlan';
 
 const RootStack = createStackNavigator(
   {
@@ -13,10 +14,11 @@ const RootStack = createStackNavigator(
     Athletes: { screen: Athletes},
     CoachesTraining: {screen: CoachesTraining},
     SignUp: { screen: SignUp },
-    AthleteEvaluation: { screen: AthleteEvaluation }
+    AthleteEvaluation: { screen: AthleteEvaluation },
+    PracticePlan: { screen: PracticePlan}
   },
   {
-    initialRouteName: 'Athletes',
+    initialRouteName: 'Login',
     // removes react navigations default header
     headerMode: 'none',
     navigationOptions: {

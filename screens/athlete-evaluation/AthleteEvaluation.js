@@ -1,10 +1,10 @@
 import React from 'react';
-import BasePage from '../components/BasePage';
+import BasePage from '../../components/BasePage';
 import { withNavigation } from 'react-navigation';
 import { ScrollView } from 'react-native-gesture-handler';
-import GrayFooter from '../components/GrayFooter';
-import RedHeader from '../components/RedHeader';
-import GrayButton from '../components/GrayButton';
+import GrayFooter from '../../components/GrayFooter';
+import RedHeader from '../../components/RedHeader';
+import GrayButton from '../../components/GrayButton';
 
 class AthleteEvaluation extends React.Component{
     render(){

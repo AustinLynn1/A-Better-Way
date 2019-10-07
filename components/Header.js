@@ -37,5 +37,5 @@ const styles = StyleSheet.create({
         color: Colors.buttonText,
         paddingLeft: 15,
         alignContent: 'flex-start'
-    }
+    },
 })

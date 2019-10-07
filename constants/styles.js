@@ -34,21 +34,26 @@ const styles = StyleSheet.create({
         textAlign: 'center'
       },
     buttonView: {
-        width: '100%',
+        width: '100%'
       },
     textInput: {
-      height: 56, 
-      width: 300, 
-      fontSize: 22,
-      backgroundColor: '#ffffff'
+        height: 56, 
+        width: 300, 
+        fontSize: 22,
+        backgroundColor: '#ffffff',
+        marginTop: 10
     },
     textLabel:{
-      textAlign: 'center',
-      fontSize: 28, 
-      fontWeight: 'bold', 
-      color: colors.buttonText
+        textAlign: 'center',
+        fontSize: 28, 
+        fontWeight: 'bold', 
+        color: colors.buttonText
+    },
+    grayScrollView:{
+        width: '100%', 
+        backgroundColor: colors.grayHeader, 
+        opacity: 74,
     }
-
 })
 
 export default styles;

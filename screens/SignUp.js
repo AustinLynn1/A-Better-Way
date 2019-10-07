@@ -1,14 +1,14 @@
 import React from 'react';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { View, Text, StyleSheet } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+
 import BasePage from '../components/BasePage';
 import Input from '../components/Input';
 import Colors from '../constants/Colors';
 import Styles from '../constants/styles';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import BlackHeader from '../components/BlackHeader';
-import { Ionicons } from '@expo/vector-icons';
-
 
 export default class SignUp extends React.Component{
 
@@ -45,7 +45,7 @@ export default class SignUp extends React.Component{
                         <Text style={style.failMessage}>{this.state.failMessage}</Text> 
                     </View>   
                 : null}
-                <KeyboardAwareScrollView resetScrollToCoords={{ x: 0, y: 0 }}>
+                <KeyboardAwareScrollView>
                <Input onChangeText={this.setEmail} value={this.state.email}>EMAIL</Input>
                <Input onChangeText={this.setPassword} value={this.state.password}>PASSWORD</Input>
                <Input onChangeText={this.setFirstName} value={this.state.firstName}>FIRST NAME</Input>

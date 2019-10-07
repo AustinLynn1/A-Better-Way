@@ -1,4 +1,5 @@
 import React from 'react';
+
 import RedButton from '../components/RedButton';
 import BasePage from '../components/BasePage';
 import BlackButton from '../components/BlackButton';
@@ -19,12 +20,12 @@ export default class Home extends React.Component {
   }
 
   render() {
-    console.log(this.props.navigation.state.params.id)
+    //console.log(this.props.navigation.state.params.id)
     return (
       <BasePage>
           <BlackButton backButton={true}>ACCOUNT</BlackButton>
           <BlackButton onPress={()=>this.props.navigation.navigate("CoachesTraining")}>COACHES TRAINING</BlackButton>
-          <RedButton>PRACTICE PLAN</RedButton>
+          <RedButton onPress={() => this.props.navigation.navigate("PracticePlan")}>PRACTICE PLAN</RedButton>
           <RedButton onPress={() => this.props.navigation.navigate("Athletes")}>ATHLETES</RedButton>
           <RedButton>PARENTS</RedButton>
           <RedButton>STRATEGIES</RedButton>
