@@ -6,19 +6,23 @@ import CoachesTraining from '../screens/home/CoachesTraining';
 import SignUp from '../screens/SignUp';
 import AthleteEvaluation from '../screens/athlete-evaluation/AthleteEvaluation';
 import PracticePlan from '../screens/home/PracticePlan';
+import Account from '../screens/home/Account';
+import Strategies from '../screens/home/Strategies';
 
 const RootStack = createStackNavigator(
   {
     Home: { screen: Home },
     Login: { screen: Login},
-    Athletes: { screen: Athletes},
-    CoachesTraining: {screen: CoachesTraining},
-    SignUp: { screen: SignUp },
+    Account: { screen: Account },
     AthleteEvaluation: { screen: AthleteEvaluation },
-    PracticePlan: { screen: PracticePlan}
+    Athletes: { screen: Athletes },
+    CoachesTraining: { screen: CoachesTraining },
+    PracticePlan: { screen: PracticePlan },
+    SignUp: { screen: SignUp },
+    Strategies: { screen: Strategies }
   },
   {
-    initialRouteName: 'Login',
+    initialRouteName: 'Home',
     // removes react navigations default header
     headerMode: 'none',
     navigationOptions: {

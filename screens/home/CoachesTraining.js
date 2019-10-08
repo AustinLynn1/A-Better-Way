@@ -2,7 +2,7 @@ import React from 'react';
 import { ScrollView } from 'react-native-gesture-handler';
 
 import BasePage from '../../components/BasePage';
-import BlackButton from '../../components/BlackButton';
+import BlackHeader from '../../components/BlackHeader';
 import RedButton from '../../components/RedButton';
 import Colors from '../../constants/Colors';
 
@@ -10,7 +10,7 @@ export default class CoachesTraining extends React.Component{
     render(){
         return(
             <BasePage footerStyle={{backgroundColor: Colors.redButton}}>
-                <BlackButton backButton={true}>COACHES TRAINING</BlackButton>
+                <BlackHeader backButton={true}>COACHES TRAINING</BlackHeader>
                 <ScrollView style={{width: '100%'}}>
                     <RedButton>INTRODUCTION</RedButton>
                     <RedButton>INFORMATION AGE</RedButton>

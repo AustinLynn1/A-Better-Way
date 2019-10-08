@@ -23,17 +23,23 @@ export default class Home extends React.Component {
     //console.log(this.props.navigation.state.params.id)
     return (
       <BasePage>
-          <BlackButton backButton={true}>ACCOUNT</BlackButton>
-          <BlackButton onPress={()=>this.props.navigation.navigate("CoachesTraining")}>COACHES TRAINING</BlackButton>
+          <BlackButton backButton={true} onPress={() => this.props.navigation.navigate("Account")}>ACCOUNT</BlackButton>
+          <BlackButton onPress={()=> this.props.navigation.navigate("CoachesTraining")}>COACHES TRAINING</BlackButton>
           <RedButton onPress={() => this.props.navigation.navigate("PracticePlan")}>PRACTICE PLAN</RedButton>
           <RedButton onPress={() => this.props.navigation.navigate("Athletes")}>ATHLETES</RedButton>
           <RedButton>PARENTS</RedButton>
-          <RedButton>STRATEGIES</RedButton>
+          <RedButton onPress={() => this.props.navigation.navigate("Strategies")}>STRATEGIES</RedButton>
           <RedButton>CONTENT</RedButton>
           <GrayFooter></GrayFooter>
       </BasePage>
     );
   }
+
+  // accountNavigation(){
+  //   this.props.navigation.navigate("Account", {
+  //    firstName: this.state.firstName
+  //   })
+  // }
 }
 
 

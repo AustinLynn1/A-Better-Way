@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         fontSize: 22,
         fontWeight: 'bold',
         color: Colors.buttonText,
-        paddingLeft: 5
+        paddingLeft: 10
       },
     grayHeader: {
         backgroundColor: Colors.grayHeader,
